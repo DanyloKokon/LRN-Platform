@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router";
 
 function Home() {
     const params = useParams()
-    const [data, setData] = useState<Course[]>([])
+    const [data, setData] = useState([])
 
     const navigate = useNavigate()
     useEffect(() => {
@@ -29,7 +29,9 @@ function Home() {
     }, [params.course])
 
     return (<section>
-        <div></div>
+        <div>
+            <h1>{data.name}</h1>
+        </div>
     </section>);
 }
 
