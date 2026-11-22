@@ -7,6 +7,7 @@ import './App.css'
 import Home from './Pages&Comp/Home'
 import Courses from './Pages&Comp/Courses'
 import Auth from './Pages&Comp/Auth'
+import Lesson from './Pages&Comp/Lesson'
 
 
 function App() {
@@ -14,11 +15,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div style={{'display': 'flex'}}>
-        <Courses/>
+      <div style={{ 'display': 'flex' }}>
+        <Courses />
         <Routes>
-          <Route path='auth' element={<Auth/>}/>
-          <Route path='/home/:course' element={<Home />} />
+          <Route path='auth' element={<Auth />} />
+          <Route path='/home/:course' element={<Home />} >
+            <Route path=':lesson' element={<Lesson />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>

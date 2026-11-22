@@ -1,0 +1,228 @@
+.course-page {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+  width: min(100%, 1080px);
+  min-width: 0;
+  margin: clamp(16px, 4vw, 48px) auto;
+  padding: 0 clamp(16px, 3vw, 32px);
+  color: #30243b;
+  text-align: left;
+}
+
+.course-overview {
+  min-width: 0;
+}
+
+.course-header,
+.lesson-list-card,
+.lesson-form-card,
+.lesson-content-card {
+  border: 1px solid rgba(89, 49, 112, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 16px 40px rgba(67, 39, 78, 0.08);
+}
+
+.course-header {
+  padding: clamp(24px, 4vw, 40px);
+  background: linear-gradient(135deg, #fff 0%, #fff8f1 100%);
+}
+
+.course-kicker {
+  margin: 0 0 8px;
+  color: #8744a8;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.course-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.lesson-list-card,
+.lesson-form-card {
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.lesson-list-card {
+  margin-top: 20px;
+}
+
+.lesson-list-card h2,
+.lesson-form h2 {
+  margin: 0;
+  color: #30243b;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.lesson-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(112, 70, 133, 0.12);
+  border-radius: 13px;
+  background: #fbf7fd;
+  color: #4d2862;
+  font-weight: 650;
+  text-decoration: none;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.lesson-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(135, 68, 168, 0.42);
+  background: #f5eafa;
+}
+
+.lesson-link:focus-visible,
+.lesson-field input:focus-visible,
+.lesson-field textarea:focus-visible,
+.lesson-submit:focus-visible {
+  outline: 3px solid rgba(135, 68, 168, 0.35);
+  outline-offset: 3px;
+}
+
+.lesson-empty {
+  margin: 14px 0 0;
+  color: #766b7d;
+  font-size: 0.95rem;
+}
+
+.lesson-form-card {
+  position: sticky;
+  top: 24px;
+}
+
+.lesson-form {
+  display: grid;
+  gap: 18px;
+}
+
+.lesson-field {
+  display: grid;
+  gap: 7px;
+  color: #493c53;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.lesson-field input,
+.lesson-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #ded2e4;
+  border-radius: 11px;
+  padding: 12px 13px;
+  background: #fff;
+  color: #30243b;
+  font: inherit;
+  font-weight: 400;
+}
+
+.lesson-field textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.lesson-field input::placeholder,
+.lesson-field textarea::placeholder {
+  color: #9a8da1;
+}
+
+.lesson-submit {
+  min-height: 46px;
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 16px;
+  background: #7c35a1;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.lesson-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #652786;
+}
+
+.lesson-submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.lesson-error {
+  margin: 0;
+  color: #a32637;
+  font-size: 0.9rem;
+}
+
+.lesson-view {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.lesson-content-card {
+  padding: clamp(24px, 5vw, 44px);
+}
+
+.lesson-content-card h2 {
+  margin: 0 0 16px;
+  color: #30243b;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.lesson-content-card p {
+  color: #51465a;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.lesson-status {
+  margin: 0;
+  color: #6c5e74;
+}
+
+.lesson-status[role="alert"] {
+  color: #a32637;
+}
+
+@media (max-width: 760px) {
+  .course-page {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .lesson-form-card {
+    position: static;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-link,
+  .lesson-submit {
+    transition: none;
+  }
+}
