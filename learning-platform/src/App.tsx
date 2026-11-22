@@ -5,17 +5,24 @@ import viteLogo from './assets/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import './App.css'
 import Home from './Pages&Comp/Home'
+import Courses from './Pages&Comp/Courses'
+import Auth from './Pages&Comp/Auth'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path='/home' element={<Home/>} />
-    </Routes>
+      <div style={{'display': 'flex'}}>
+        <Courses/>
+        <Routes>
+          <Route path='auth' element={<Auth/>}/>
+          <Route path='/home/:course' element={<Home />} />
+        </Routes>
+      </div>
     </BrowserRouter>
-     
+
   )
 }
 
